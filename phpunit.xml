@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<phpunit bootstrap="./tests/bootstrap.php" colors="true">
+    <testsuite name="Affinity API tests">
+        <directory>./tests</directory>
+    </testsuite>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-clover" target="clover.xml" />
+    </logging>
+</phpunit>

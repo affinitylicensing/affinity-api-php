@@ -1,0 +1,24 @@
+{
+    "name": "affinitylicensing/affinity-api-php",
+    "description": "PHP Library for Affinity API",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^5.0",
+        "squizlabs/php_codesniffer": "~2.0",
+        "satooshi/php-coveralls": "~1.0"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": { "Affinity\\" : "src/" }
+    },
+    "homepage": "https://affinity-gateway.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Hepner",
+            "email": "chrish@affinity-consultants.com"
+        }
+    ]
+}

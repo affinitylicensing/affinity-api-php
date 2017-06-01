@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+
+# Ignore compser lockfile and vendor dir
+/vendor/
+composer.lock
+
+# Ignore the SimpleTest library if it is installed to /test/.
+/test/simpletest/
+
+# Ignore PHPUnit coverage file
+clover.xml
+
+# Ignore IntelliJ project files
+.idea
+
