@@ -118,10 +118,18 @@ class DesignsClient extends Affinity
         return json_decode($res->getBody()->getContents(), true);
     }
 
-    public function getCategories()
+    /**
+     * Returns a list of product categories
+     *
+     * Supports passing additional filter params, i.e., "'licensed' => 1"
+     * @see http://apidocs.affinitygateway.com/#operation/listCategories
+     * @param array $params key/value pairs of additional params
+     * @return array Product categories listing
+     */
+    public function getCategories(array $params = [])
     {
         $path = '/product_categories';
-        $res = $this->client->request('GET', $path);
+        $res = $this->client->request('GET', $path, ['query' => $params]);
 
         if ($res->getStatusCode() !== 200) {
             $this->throwInvalidResponseException($res);
