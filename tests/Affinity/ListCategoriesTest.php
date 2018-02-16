@@ -36,6 +36,16 @@ class ListCategoriesTest extends DesignsTestCase
     }
 
     /** @test */
+    public function request_includes_parameters()
+    {
+        $this->designs->getCategories(['is_available' => true]);
+
+        $request = $this->historyContainer[0]['request'];
+
+        $this->assertEquals('is_available=1', $request->getUri()->getQuery());
+    }
+
+    /** @test */
     public function throws_exception_on_non_200_response()
     {
         $handler = $this->getCustomMockHandler(500, ['message' => 'It broke']);
